@@ -1,0 +1,36 @@
+<pre>
+<span><span><a href= "/city_update/">*Update Existing City*</a></span>    <span><a href= "/city_delete/">*Delete Existing City*</a>    <span><a href= "/city_list/">List of Cities</a></span>    <span><a href= "/city_search/">Search Cities</a></span>    <span><a href = "/state_list/">List of States:Capitals</a></span>    <span><a href = "/state_search/">Search States</a></span>    <span><a href = "/state_capital_search/">Search State Capitals</a></span>
+</pre>
+
+<h4>Create City </h4>
+
+<form action="/city_create/" method='POST'>
+{% csrf_token %}
+
+<label for="name"> Name:</label>
+<input type = "text" name="name" id ="name">
+</br>
+<label for="county"> County:</label>
+<input type="text" name="county" id = 'county'>
+</br>
+<label for="latitude"> Latitude:</label>
+<input type="text" name="latitude" id = 'latitude'>
+</br>
+<label for="longitude"> Longitude:</label>
+<input type="text" name="longitude" id = 'longitude'>
+</br>
+<label for="zip_code"> Zip_code:</label>
+<input type="text" name="zip_code" id = 'zip_code'>
+</br>
+
+<input type='submit' value='Create'>
+
+<select name='state' id ='state'>
+    <option value=''>Select A State</option>
+    {%for state in states %}
+        <option value="{{state.pk}}">{{state.name}}</option>
+    {%endfor%}
+</select>
+</form>
+
+{{created}}

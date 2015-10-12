@@ -1,0 +1,21 @@
+<pre>
+<span><a href = "/state_list/">List of States:Capitals</a></span>    <span><a href = "/state_capital_search/">Search State Capitals</a></span>    <span><a href = "/city_list/">List of Cities</a></span>    <span><a href= "/city_search/">Search Cities</a></span> 
+</pre>
+<!--
+<pre>
+Get: {{request.GET}}
+<br>
+Post: {{request.POST}}
+<br>
+-->
+<h1> Search for a State:</h1>
+<form action="/state_search/" method='GET'>
+    {%csrf_token%}
+    <input name='state' type='text'>
+</form>
+
+{% for state in states %}
+    <a href = "/state_detail/{{state.pk}}/">{{state.name }}</a>
+    </br>
+{% endfor %}
+</pre>

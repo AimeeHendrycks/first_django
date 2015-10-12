@@ -1,0 +1,11 @@
+<pre>
+<span><a href = "/state_list/">List of States:Capitals</a></span>    <span><a href = "/state_search/">Search States</a></span>    <span><a href = "/state_capital_search/">Search State Capitals</a></span>    <span><a href= "/city_list/">List of Cities</a></span>    <span><a href= "/city_search/">Search Cities</a></span>
+</pre>
+
+<h1>Capital Detail</h1>
+
+<h2>Name: <em>{{ state_capital.name }}</em></h2>
+State:<a href = '/state_detail/{{state_capital.state.pk}}'>{{ state_capital.state }}</br></a>
+Population: {{ state_capital.pop }}</br>
+Longitude: {{ state_capital.lon }}</br>
+Latitude: {{ state_capital.lat }}</br>

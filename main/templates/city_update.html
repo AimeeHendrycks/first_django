@@ -1,0 +1,19 @@
+<pre>
+<span><span><a href= "/city_create/">*Create New City*</a></span>    <span><a href= "/city_delete/">*Delete Existing City*</a>   <span><a href= "/city_search/">Search Cities</a></span>    <span><a href = "/state_list/">List of States:Capitals</a></span>    <span><a href = "/state_search/">Search States</a></span>    <span><a href = "/state_capital_search/">Search State Capitals</a></span>
+</pre>
+
+
+
+<h1>Update City</h1>
+
+<form action="/city_update_spec/" method='POST'>
+{% csrf_token %}
+<h5 style = "margin-bottom:-0px">Select A Cereal:</h5>
+<select name='city_id' id ='city' multiple>
+    {%for c in cities%}
+        <option value="{{c.pk}}">{{c.name}}</option>
+    {%endfor%}
+</select>
+
+<!--Brings you to cereal specific update page -->
+<input type='submit' value='Go to Update Page'>

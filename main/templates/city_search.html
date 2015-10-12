@@ -1,0 +1,38 @@
+{%extends "base.html"%}
+{%load staticfiles %}
+{%block body %}
+
+
+<div class="container">
+
+        <div class="row">
+            <div class="box">
+
+                {% for state in states %}
+                <div class="col-lg-12 text-center">
+                    <!--<img class="img-responsive img-border img-full" src="{% static 'img/slide-1.jpg' %}" alt="">-->
+                <h2>{{state.name}}</h2>
+                    <p>{% for c in cities %}
+                    {% if c.state = state %}
+                        -&nbsp<a href='/city_detail/{{c.pk}}'>{{c}}:&nbsp{{c.zip_code}}</a>&nbsp-
+                    {% endif %}
+                    {%endfor%}
+                    </p>
+                </div>
+                {% endfor %}
+                <div class="col-lg-12 text-center">
+                    <ul class="pager">
+                        <li class="previous"><a href="#">&larr; Older</a>
+                        </li>
+                        <li class="next"><a href="#">Newer &rarr;</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+</div>
+
+
+{%endblock body%}
+

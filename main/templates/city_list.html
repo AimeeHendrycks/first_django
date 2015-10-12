@@ -1,0 +1,12 @@
+<pre>
+<span><span><a href= "/city_create/">*Create New City*</a></span>    </span><a href= "/city_update/">*Update Existing City*</a></span>    <span><a href= "/city_delete/">*Delete Existing City*</a>    <span><a href= "/city_search/">Search Cities</a></span>    <span><a href = "/state_list/">List of States:Capitals</a></span>    <span><a href = "/state_search/">Search States</a></span>    <span><a href = "/state_capital_search/">Search State Capitals</a></span>
+</pre>
+
+<h1>List of Cities</br></h1>
+
+</br>
+
+{% for c in cities %}
+    <a href="http://127.0.0.1:8000/city_detail/{{c.pk}}">{{ c.name }}</a>
+    </br>
+{% endfor %}

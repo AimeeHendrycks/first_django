@@ -1,0 +1,7 @@
+<h1>List of State Capitals</br></h1>
+
+</br>
+{% for sc in state_capitals %}
+    <a href="http://127.0.0.1:8000/state_capital_detail/{{sc.pk}}">{{ sc.name }}</a>
+    </br>
+{% endfor %}
