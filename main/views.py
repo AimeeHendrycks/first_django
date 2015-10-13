@@ -22,6 +22,8 @@ def state_list(request):
 
     context['states'] = states
 
+    print states
+
     #template --> context dictionary --> context_instance variable
     return render_to_response('state_list.html', context, context_instance=RequestContext(request))
 

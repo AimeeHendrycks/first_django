@@ -5,8 +5,12 @@ from django.db import models
 class State(models.Model):
     name = models.CharField(max_length=255, null=True, blank=True)
     abbrev = models.CharField(max_length=2, null=True, blank=True)
-    
-
+    pop = models.CharField(max_length=25, null=True, blank=True)
+    state_map = models.ImageField(upload_to='state_map', null=True, blank=True)
+    nick_name = models.CharField(max_length=255, null=True, blank=True)
+    bird =models.CharField(max_length=255, null=True, blank=True)
+    flag = models.ImageField(upload_to='flag', null=True, blank=True)
+    statehood = models.CharField(max_length=255, null=True, blank=True)
     def __unicode__(self):
         return '%s' % self.name
 

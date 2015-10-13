@@ -1,4 +1,4 @@
-{% extends "base.html"%}
+{% extends "base.html" %}
 {% load staticfiles %}
 {% load humanize %}
 {% block body %}
@@ -24,6 +24,9 @@
                     </p>
                     <p>Capital Population:
                         <strong>{{ state.statecapital.pop|intcomma }}</strong>
+                    </p>
+                    <p>
+                    <img class='col-md-12' src = '{{state.state_map.url}}' alt = "">
                     </p>
                     <div><a href="/state_capital_new/{{state.statecapital.pk}}" class="btn btn-default btn-md" style = 'margin-left:0%; margin-top:220px; background:#163559; color:white;'>New State Capital</a></div>
                     <div><a href="/state_capital_edit/{{state.statecapital.pk}}" class="btn btn-default btn-md" style = 'margin-left:0%; margin-top:0px; background:#163559; color:white;'>Edit State Capital</a></div>

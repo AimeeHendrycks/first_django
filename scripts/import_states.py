@@ -32,10 +32,10 @@ reader = csv.DictReader(csv_file)
 reader2 = csv.DictReader(csv_file2)
 
 for row in reader:
-    new_state, created = State.objects.get_or_create(name=row['state'])
+    new_state, created = State.objects.get_or_create(abbrev=row['abbrev'])
     print new_state.name
     print created
-    new_state.abbrev = row['abbrev']
+    new_state.name = row['state']
     new_state.save()
     
     new_capital, created = StateCapital.objects.get_or_create(name=row['capital'])
