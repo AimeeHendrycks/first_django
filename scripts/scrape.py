@@ -77,11 +77,14 @@ for link in links:
     print state_statehood
 
 #HELP?
+    state_flag_link_xpath = '//*[@id="content"]/div[1]/div[3]/div/a[2]/div/div/div[1]/img/@src'
+    #finds
+
     try:
-        state_flag_xpath='//*[@id="collapseFacts"]/div/ul/li[7]/div/a[1]/img/@src'
-        state_flag_xpath_link = tree.xpath(state_flag_xpath)[0]
-        url = 'www.50states.com%s'%state_flag_xpath_link
-        print url
+
+        state_flag_link = tree.xpath(state_flag_link_xpath)[0]
+        print state_flag_link
+        url = 'http://www.50states.com/%s'%state_flag_link
         image_response = urllib2.urlopen(url).read()
 
         img_temp = NamedTemporaryFile(delete = True)
@@ -91,8 +94,11 @@ for link in links:
             state_object.flag.save('flag_image.gif', File(img_temp))
         except Exception, e:
             print e
+        
+
     except Exception, e:
         print e
+
 
         
 

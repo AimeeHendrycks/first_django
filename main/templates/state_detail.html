@@ -12,33 +12,51 @@
                     </h1>
                     <hr>
                 </div>
-                <div class="col-md-8">
-                    <!-- Embedded Google Map using an iframe - to select your location find it on Google maps and paste the link as the iframe src. If you want to use the Google Maps API instead then have at it! -->
-                    <div id='map' style='min-height:400px; min-width:100%;'>
-                    --> map goes here <--
-                    </div>
+                <div style='margin-top:10px'>
+                <img class='col-md-6 col-md-offset-1' src = '{{state.state_map.url}}' alt = "">  
                 </div>
                 <div class="col-md-4">
+                    <p>
+                    <img style='margin:25px'class='col-md-10 col-md-offset-1' src = '{{state.flag.url}}' alt = "">
+                    </p></br>
+                    <p>Admission to Statehood:
+                        <strong>{{state.statehood}}</strong></p>
                     <p>Capital:
                         <strong>{{ state.statecapital.name }}</strong>
                     </p>
                     <p>Capital Population:
                         <strong>{{ state.statecapital.pop|intcomma }}</strong>
                     </p>
-                    <p>
-                    <img class='col-md-12' src = '{{state.state_map.url}}' alt = "">
+                    <p>Nick name:
+                        <strong>{{state.nick_name}}</strong>
                     </p>
-                    <div><a href="/state_capital_new/{{state.statecapital.pk}}" class="btn btn-default btn-md" style = 'margin-left:0%; margin-top:220px; background:#163559; color:white;'>New State Capital</a></div>
-                    <div><a href="/state_capital_edit/{{state.statecapital.pk}}" class="btn btn-default btn-md" style = 'margin-left:0%; margin-top:0px; background:#163559; color:white;'>Edit State Capital</a></div>
-                    <div><a href="/state_capital_remove/{{state.statecapital.pk}}" class="btn btn-default btn-md" style = 'margin-left:0%; margin-top: 0px;background:#163559; color:white'>Remove State Capital</a></div>
-                    <div><a href="/state_edit/{{state.pk}}" class="btn btn-default btn-md" style = 'margin-left:63%; margin-top:-123px; background:#163559; color:white;'>Edit State</a></div>
-                    <div><a href="/state_remove/{{state.pk}}" class="btn btn-default btn-md" style = 'margin-left:63%; margin-top: -95px;background:#163559; color:white'>Remove State</a></div>
-                    
+                    <p>Bird:
+                        <strong>{{state.bird}}</strong>
+                    </p>
+                </div>
 
+                <div class="col-md-10 col-md-offset-1" style='margin-top:10px'>
+                    <!-- Embedded Google Map using an iframe - to select your location find it on Google maps and paste the link as the iframe src. If you want to use the Google Maps API instead then have at it! -->
+                    <div id='map' style='min-height:400px; min-width:100%;'>
+                    --> map goes here <--
+                    </div>
                 </div>
                 <div class="clearfix"></div>
             </div>
         </div>
+
+        <div class="row">
+            <div class="box">
+                <div class="col-lg-12">
+                    <span><a href="/state_capital_new/{{state.statecapital.pk}}" class="btn btn-default btn-md" style = 'margin-left:20%; margin-top:0px; background:#163559; color:white;'>New State Capital</a></span>
+                    <span><a href="/state_capital_edit/{{state.statecapital.pk}}" class="btn btn-default btn-md" style = 'margin-left:0%; margin-top:0px; background:#163559; color:white;'>Edit State Capital</a></span>
+                    <span><a href="/state_capital_remove/{{state.statecapital.pk}}" class="btn btn-default btn-md" style = 'margin-left:0%; margin-top: 0px;background:#163559; color:white'>Remove State Capital</a></span>
+                    <span><a href="/state_edit/{{state.pk}}" class="btn btn-default btn-md" style = 'margin-left:0%; margin-top:0px; background:#163559; color:white;'>Edit State</a></span>
+                    <span><a href="/state_remove/{{state.pk}}" class="btn btn-default btn-md" style = 'margin-left:0%; margin-top: 0px;background:#163559; color:white'>Remove State</a></span>
+                </div>
+            </div>
+        </div>
+
         <div class="row">
             <div class="box">
                 <div class="col-lg-12">
