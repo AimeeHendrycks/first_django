@@ -3,7 +3,7 @@
 The `urlpatterns` list routes URLs to views. For more information please see:
     https://docs.djangoproject.com/en/1.8/topics/http/urls/
 Examples:
-Function views
+Function views 
     1. Add an import:  from my_app import views
     2. Add a URL to urlpatterns:  url(r'^$', views.home, name='home')
 Class-based views
@@ -22,7 +22,7 @@ urlpatterns = [
     url(r'^admin/', include(admin.site.urls)),
 
     #url(pattern, view)
-    url(r'^state_home/$', 'main.views.state_home'),
+    url(r'^/$', 'main.views.state_home'),
     url(r'^state_list/$', 'main.views.state_list'),
     url(r'^state_detail/(?P<pk>\d+)/$', 'main.views.state_detail'),
     url(r'^state_search/$', 'main.views.state_search'),
