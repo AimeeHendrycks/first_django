@@ -22,7 +22,7 @@ urlpatterns = [
     url(r'^admin/', include(admin.site.urls)),
 
     #url(pattern, view)
-    url(r'^/$', 'main.views.state_home'),
+    url(r'^$', 'main.views.state_home'),
     url(r'^state_list/$', 'main.views.state_list'),
     url(r'^state_detail/(?P<pk>\d+)/$', 'main.views.state_detail'),
     url(r'^state_search/$', 'main.views.state_search'),
